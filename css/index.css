@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root{
+    --primary-color: rgb(222, 231, 233);
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--primary-color);
+}
+
+.contenedor{
+    border:1px solid #ccc;
+    border-radius: 20px;
+    box-shadow: 1px 4px 6px 3px #999;
+    width:20%;
+    min-width:300px;
+    margin:5px auto;
+    padding-bottom:20px;
+    padding: 10px 3%; 
+    text-align:center;
+}
+
+header{
+    padding: 10px 3%; 
+    text-align:center;
+}
+
+h1{
+    text-align: center;
+}
+
+#cantidadAhorro{
+    font-size: 2.5rem;
+}
+
+.contenedor-TotalIngresos, .contenedor-TotalGastos{
+    background-color: white;
+    border: thin solid var(--primary-color);
+    border-radius: 4px;
+    display: inline-block;
+    font: inherit;
+    line-height: 1.5em;
+    padding: 0.5em 2em 0.5em 2em;
+    text-align: center;
+}
+
+.nuevoIngreso, .nuevoGasto{
+    background-color: white;
+    border: thin solid var(--primary-color);
+    border-radius: 4px;
+    display:table;
+    font: inherit;
+    line-height: 1.5em;
+    padding: 0.5% 1% 0.5% 1%;
+    text-align: left;
+
+    display: grid;
+    grid-template-columns:1fr 1% -10fr;
+    grid-template-areas: 
+        "concepto . cantidad";
+    cursor: pointer;
+}
+
+.contenedor-TotalIngresos, .nuevoIngreso {
+    border-right-color: rgb(30, 193, 114);
+    border-right-width: 5px;
+}
+
+.contenedor-TotalGastos, .nuevoGasto {
+    border-right-color: rgb(186, 31, 31);
+    border-right-width: 5px;
+}
+
+.nuevoConcepto{
+    grid-area: concepto;
+    text-align: left;
+    padding-left: 7px;
+}
+
+.nuevaCantidad{
+    grid-area: cantidad;
+    text-align: right;
+    padding-right: 7px;
+}
+
+#ingreso, #gasto{
+    font-weight: 600;
+}
+
+#totalIngreso {
+    color:rgb(30, 193, 114);
+}
+
+#totalGasto {
+    color:rgb(186, 31, 31);
+}
+
+input {
+    background-color: white;
+    border: thin solid rgb(192, 188, 188);
+    border-radius: 4px;
+    display: inline-block;
+    line-height: 1.5em;
+    padding: 1em;
+    margin-top: 5px;
+    width:94%;
+}  
+
+.botonAñadir {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    background-color: white;
+    border: thin solid var(--primary-color);
+    border-radius: 4px;
+    display: inline-block;
+    font: inherit;
+    line-height: 1.5em;
+    padding: 0.5em 2em 0.5em 2em;
+    cursor: pointer;
+}
+
+.historial, .cantidadAhorro{
+    margin-top: -20px;
+}
+
+::placeholder{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+}
+
+.lineas-historial, .lineas-form{
+    position:relative;
+}
+
+.lineas-historial::after,.lineas-historial::before{
+    content:'';
+    position:absolute;
+    width:30%;
+    height:2px;
+    background-color: rgb(194, 191, 191);
+    top:0.6em
+}
+
+.lineas-historial::after{
+    right:-10px;
+}
+
+.lineas-historial::before{
+    left:-10px;
+}
+
+.lineas-form::after,.lineas-form::before{
+    content:'';
+    position:absolute;
+    width:10%;
+    height:2px;
+    background-color: rgb(194, 191, 191);
+    top:0.6em
+}
+
+.lineas-form::after{
+    right:-10px;
+}
+
+.lineas-form::before{
+    left:-10px;
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media screen and (min-width: 1024px) {
+
+
+    .lineas-historial, .lineas-form{
+        position:relative;
+    }
+    
+    .lineas-historial::after,.lineas-historial::before{
+        content:'';
+        position:absolute;
+        width:40%;
+        height:2px;
+        background-color: rgb(194, 191, 191);
+        top:0.6em
+    }
+    
+    .lineas-historial::after{
+        right:-40px;
+    }
+    
+    .lineas-historial::before{
+        left:-40px;
+    }
+    
+    .lineas-form::after,.lineas-form::before{
+        content:'';
+        position:absolute;
+        width:40px;
+        height:2px;
+        background-color: rgb(194, 191, 191);
+        top:0.6em
+    }
+    
+    .lineas-form::after{
+        right:-40px;
+    }
+    
+    .lineas-form::before{
+        left:-40px;
+    }
+}
+  

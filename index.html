@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de gastos</title>
+    <link rel="styleSheet" type="text/css" href="./css/index.css">
+    
+</head>
+<body>
+    <header class="header">
+        <h1>Control de gastos</h1>
+    </header>
+    <main class="contenedor">
+        <section>
+            <div>
+                <h2>TU AHORRO</h2>
+                <h2 class="cantidadAhorro" id="cantidadAhorro">0.00€</h2>
+            </div>
+            <div>
+                <div class="contenedor-TotalIngresos" id="contenedorTotalIngresos">
+                    <p id="ingreso">INGRESO</p>
+                    <p id="totalIngreso">0.00€</p>
+                </div>
+                <div class="contenedor-TotalGastos" id="contenedorTotalGastos">
+                    <p id="gasto">GASTO</p>
+                    <p id="totalGasto">0.00€</p>
+                </div>
+            </div>
+        </section>
+        <section >
+            <h2 class="lineas-historial">Historial</h2>
+            <p class="historial">(Doble click para eliminar)</p>
+            <div id="historial"></div>
+        </section>
+        <section>
+            <form novalidate id="formTransaccion">
+                <h2 class="lineas-form">Añadir nueva transacción</h2>
+                <label for="concepto">Concepto</label>
+                <br/>
+                <input name="concepto" id="concepto" type="text" placeholder="Añade concepto...">
+                <br/><br/>
+                <label for="cantidad">Cantidad</label>
+                <br/>
+                <label for="cantidad">(negativo - gasto, positivo - ingreso)</label>
+                <br/>
+                <input name="cantidad" id="cantidad" type="number" placeholder="Introduce cantidad...">
+                <br/>
+                <button type="submit" id="botonAñadir" class="botonAñadir">Añadir transacción</button>
+            </form>
+        </section>
+        <script src="./js/index.js"></script>
+    </main>
+</body>
+</html>
