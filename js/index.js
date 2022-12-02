@@ -1,7 +1,6 @@
 
-//PARA EVITAR QUE SE REFRESQUE LA PAGINA AL CLICAR AL BOTON, SE AÑADE EL EVENTO AL FORMULARIO Y NO AL BOTÓN
-
 window.onload = function(){
+    //Evitamos que refresque la página al hacer submit añadiendole el evento al formulario
     const formControlGastos = document.querySelector('#formTransaccion');
     formControlGastos.addEventListener("submit", addTransaccion)
     
@@ -11,7 +10,7 @@ window.onload = function(){
 };
 
 function addTransaccion(event){
-    //Prevenimos la propagación (anular) del evento submit para que el navegador no haga nada y no refresque
+    //Prevenimos la propagación del evento submit para que el navegador no refresque
     event.preventDefault()
 
     const cantidadInput = document.getElementById("cantidad");
@@ -145,7 +144,9 @@ function reconstruirHistorial(objetoHistorial){
     
         nuevaCantidad.setAttribute("class", "nuevaCantidad");
         nuevoConcepto.setAttribute("class", "nuevoConcepto");
-        if(objetoHistorial.transacciones[i].cantidad > 0){
+
+        let cantidadString = objetoHistorial.transacciones[i].cantidad
+        if(parseFloat(cantidadString.slice(0, -1)) > 0){
             nuevoDiv.setAttribute("class", "nuevoIngreso");
         }else{
             nuevoDiv.setAttribute("class", "nuevoGasto");
